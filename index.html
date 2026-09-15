@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0920">
+  <meta name="description" content="Đăng ký gói Locket Gold 30K và xác nhận thanh toán qua Zalo.">
+  <title>Đăng ký Locket Gold 30K</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f4c84d'/%3E%3Cpath d='M19 20h26v26H19z' fill='%230b0920'/%3E%3Ccircle cx='32' cy='33' r='8' fill='%23f4c84d'/%3E%3Cpath d='M25 16h14l3 7H22z' fill='%230b0920'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand" aria-label="Locket Gold">
+      <div class="brand-mark" aria-hidden="true">L</div>
+      <span>LOCKET GOLD</span>
+      <span class="status"><i></i> Nhận đơn</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">ĐĂNG KÝ NHANH</div>
+      <h1>Gold của bạn,<br><span>chỉ 30K</span></h1>
+      <p>Nhập đúng username Locket, thanh toán và gửi xác nhận để được hỗ trợ.</p>
+      <div class="plan">
+        <div>
+          <span class="plan-label">GÓI GOLD</span>
+          <strong>Vĩnh viễn<sup>*</sup></strong>
+        </div>
+        <div class="price"><b>30.000</b><span>đ</span></div>
+      </div>
+    </section>
+
+    <section class="card order-card" aria-labelledby="order-title">
+      <div class="step-title">
+        <span>01</span>
+        <div><small>BƯỚC ĐẦU TIÊN</small><h2 id="order-title">Nhập username Locket</h2></div>
+      </div>
+      <form id="orderForm" novalidate>
+        <label for="username">Username của bạn</label>
+        <div class="input-wrap">
+          <span aria-hidden="true">@</span>
+          <input id="username" name="username" type="text" autocomplete="off" placeholder="username_locket" maxlength="40" required>
+        </div>
+        <p class="error" id="usernameError" role="alert"></p>
+        <button class="primary" type="submit">Tiếp tục thanh toán <span>→</span></button>
+      </form>
+      <div class="safe-note"><span aria-hidden="true">✓</span> Chỉ cần username — không cung cấp mật khẩu hoặc mã OTP.</div>
+    </section>
+
+    <section class="card payment-card" id="payment" aria-labelledby="payment-title" hidden>
+      <div class="step-title">
+        <span>02</span>
+        <div><small>THANH TOÁN</small><h2 id="payment-title">Quét mã QR ngân hàng</h2></div>
+      </div>
+
+      <div class="qr-frame">
+        <img src="assets/qr-mb-nguyen-thanh-nam.jpeg" alt="Mã QR ngân hàng MB của Nguyễn Thanh Nam, số tài khoản 0372083318">
+      </div>
+
+      <dl class="bank-info">
+        <div><dt>Ngân hàng</dt><dd>MB Bank</dd></div>
+        <div><dt>Chủ tài khoản</dt><dd>NGUYEN THANH NAM</dd></div>
+        <div><dt>Số tài khoản</dt><dd>0372083318 <button type="button" class="copy-small" data-copy="0372083318">Sao chép</button></dd></div>
+        <div><dt>Số tiền</dt><dd class="gold">30.000đ</dd></div>
+        <div><dt>Nội dung CK</dt><dd><span id="transferContent">LOCKET</span> <button type="button" class="copy-small" id="copyContent">Sao chép</button></dd></div>
+      </dl>
+
+      <button class="primary zalo" id="confirmBtn" type="button">Đã chuyển khoản — Gửi Zalo <span>→</span></button>
+      <p class="helper">Sau khi bấm, nội dung đơn sẽ được sao chép. Hãy dán vào Zalo và gửi kèm ảnh chuyển khoản.</p>
+    </section>
+
+    <footer>
+      <a href="tel:0372083318">Hỗ trợ: 0372 083 318</a>
+      <p>*Thời hạn và bảo hành áp dụng theo chính sách của người bán. Trang không liên kết chính thức với Locket.</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Đã sao chép</div>
+  <script src="script.js"></script>
+</body>
+</html>
